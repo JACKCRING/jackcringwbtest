@@ -62,7 +62,7 @@ Vue.component('card001', {
         //新加的
         this.$el.addEventListener('touchmove', ev => {
             window.requestAnimationFrame(() => {
-                this.stop(ev);
+                this.move(ev);
             });
         });
         this.$el.addEventListener('mouseleave', ev => {
@@ -70,8 +70,16 @@ Vue.component('card001', {
                 this.stop(ev);
             });
         });
+
+        this.$el.addEventListener('mousedown', ev => {
+            window.requestAnimationFrame(() => {
+                this.stop(ev);
+            });
+        });
+
+
         //新加的
-        this.$el.addEventListener('touchend', ev => {
+        this.$el.addEventListener('touchcancel', ev => {
             window.requestAnimationFrame(() => {
                 this.stop(ev);
             });
