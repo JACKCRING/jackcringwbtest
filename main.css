@@ -1,0 +1,333 @@
+/* @charset "UTF-8";
+/* @font-face {
+  font-family: iAWriterMono;
+  src: url("iAWriterMonoS-Regular.ttf");
+} */
+
+@import "reset.css";
+:root {
+    --fg: 255;
+    --bg-shade: .9;
+    --background-secondary: 50;
+    --paragraph-width: 510px;
+    --fg-100: rgba(var(--fg), var(--fg), var(--fg), 1);
+    --fg-90: rgba(var(--fg), var(--fg), var(--fg), 0.9);
+    --fg-50: rgba(var(--fg), var(--fg), var(--fg), 0.5);
+    --fg-30: rgba(var(--fg), var(--fg), var(--fg), 0.3);
+    --fg-10: rgba(var(--fg), var(--fg), var(--fg), 0.1);
+    --fg-black-100: rgba(0, 0, 0, 1);
+    --fg-black-90: rgba(0, 0, 0, 0.9);
+    --fg-black-50: rgba(0, 0, 0, 0.5);
+    --fg-black-30: rgba(0, 0, 0, 0.3);
+    --fg-black-20: rgba(0, 0, 0, 0.2);
+    --fg-black-10: rgba(0, 0, 0, 0.1);
+    --bg: rgba(223, 224, 228, 1);
+    --bs-body-bg: rgba(223, 224, 228, 1);
+    --h3-size: 17px;
+    --body-font-family: 'Rubik,neue-haas-grotesk-text';
+    --body-line-height: 150%;
+    --body-size: 15px;
+    --body-letter-spacing: 0.02em;
+    --caption-size: 14px;
+    --caption-letter-spacing: 0.02em;
+    --mobile-size: 15px;
+    --mobile-letter-spacing: 0.02em;
+}
+
+
+/* IE Edag Chrome 隐藏滚动条 x y */
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+.cardGaps {
+    column-gap: 20px;
+}
+
+
+/* 分割线 */
+
+.CCline {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 1px;
+    background: black
+}
+
+.CCTypefontsize {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* 滚动条 */
+
+.scroll1::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scroll1::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+.scroll1::-webkit-scrollbar-thumb {
+    background: var(--fg-black-10);
+    border-radius: 4px;
+}
+
+.hoverCard small {
+    display: inline-block;
+    padding-top: 2px;
+    padding-bottom: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--body-font-family), Rubik, neue-haas-unica, aktiv-grotesk, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+}
+
+.landing {
+    padding: 60px 30px 30px 40px;
+    display: grid;
+    grid-template-columns: var(--paragraph-width) 1fr;
+    column-gap: 60px;
+}
+
+.about {
+    grid-column-start: 1;
+    width: var(--paragraph-width);
+    /* max-width: auto; */
+    position: fixed;
+}
+
+::selection {
+    color: none;
+    background: none;
+}
+
+
+/* For Mozilla Firefox */
+
+::-moz-selection {
+    color: none;
+    background: none;
+}
+
+.indent {
+    margin-right: 28px;
+}
+
+h6 {
+    color: var(--fg-black-20);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+a,
+p,
+b {
+    color: var(--fg-black-90);
+    line-height: var(--body-line-height);
+    font-size: var(--body-size);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: var(--body-letter-spacing);
+    z-index: 0;
+    width: auto;
+}
+
+b {
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--fg-40);
+    font-weight: bold;
+}
+
+small {
+    font-size: var(--caption-size);
+    color: var(--fg-black-30);
+    line-height: var(--body-line-height);
+    letter-spacing: var(--caption-letter-spacing);
+    font-style: normal;
+    font-weight: 400;
+    z-index: 0;
+    width: auto;
+    margin-top: 5px;
+    opacity: 0.5;
+}
+
+small b {
+    font-size: var(--caption-size);
+}
+
+.about a:hover,
+footer a:hover {
+    border-bottom: 1px solid var(--fg-50);
+    color: var(--fg-100);
+}
+
+p {
+    cursor: default;
+}
+
+.media {
+    grid-column-start: 2;
+    width: 100%;
+    height: 100%;
+    margin-top: 96px;
+}
+
+.hoverCard {
+    width: 100%;
+    height: 100%;
+    /* max-width: 1000px; */
+    transform-origin: center top;
+    border-bottom: none;
+    display: inline-block;
+    animation: loadIn 1.8s 1s forwards;
+    opacity: 0;
+}
+
+.hoverCard,
+figure {
+    transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+figure {
+    margin-bottom: 30px;
+}
+
+figure:last-child {
+    margin-bottom: 70px;
+}
+
+.about,
+footer {
+    opacity: 0;
+    animation: loadIn 0.8s 0.5s forwards;
+}
+
+.hoverCard:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.hoverCard:nth-child(2) {
+    animation-delay: 0.55s;
+}
+
+.hoverCard:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.hoverCard:nth-child(4) {
+    animation-delay: 0.65s;
+}
+
+.hoverCard:last-child {
+    margin-bottom: 0px;
+    animation-delay: 0.65s;
+}
+
+.hoverCard a {
+    text-decoration: none;
+}
+
+figure:hover {
+    transform: scale(1.01);
+    opacity: 0.9;
+}
+
+.hoverCard video,
+.hoverCard img {
+    /* border: 1px solid var(--fg-10); */
+    border-radius: 12px;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: cover;
+}
+
+.hoverCard:hover>img,
+.hoverCard:hover>video {
+    box-shadow: 0 0 100x var(--fg-10);
+    border: 1px solid var(--fg-50);
+}
+
+.hoverCard:hover>small {
+    opacity: .9;
+}
+
+footer {
+    position: fixed;
+    margin-top: 0px;
+    bottom: 30px;
+    width: 100%;
+}
+
+@keyframes loadIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 950px) {
+    .landing {
+        grid-template-columns: 1fr;
+    }
+    .about {
+        position: static;
+        width: 100%;
+        max-width: auto;
+    }
+    .media {
+        margin-top: 30px;
+        grid-column-start: 1;
+    }
+    footer {
+        position: static;
+        margin-top: 60px;
+        bottom: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .landing {
+        padding: 32px 16px 14px 16px;
+        column-gap: 0;
+    }
+    a,
+    p {
+        line-height: 1.4em;
+        font-size: var(--mobile-size);
+        letter-spacing: var(--mobile-letter-spacing);
+    }
+    small,
+    small b {
+        font-size: var(--caption-size);
+        letter-spacing: var(--caption-letter-spacing);
+        line-height: 1.4em;
+    }
+}
+
+.lgsize {
+    /* display: block; */
+    width: atuo;
+    height: 70px;
+}
