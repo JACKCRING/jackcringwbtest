@@ -60,7 +60,7 @@ Vue.component('card001', {
             });
         });
         //新加的
-        this.$el.addEventListener('touchstart', ev => {
+        this.$el.addEventListener('touchmove', ev => {
             window.requestAnimationFrame(() => {
                 this.move(ev);
             });
