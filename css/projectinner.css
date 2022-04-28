@@ -391,7 +391,8 @@ caption {
 
 /* 网格样式 */
 
-.w-layout-grid {
+
+/* .w-layout-grid {
     display: -ms-grid;
     display: grid;
     grid-auto-columns: 1fr;
@@ -401,4 +402,4 @@ caption {
     grid-template-rows: auto auto;
     grid-row-gap: 16px;
     grid-column-gap: 16px;
-}
+} */
