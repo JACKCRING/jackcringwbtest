@@ -41,6 +41,9 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+
+/* 禁止浏览器复制行为 */
+
 body {
     -moz-user-select: none;
     /* Firefox私有属性 */
@@ -54,6 +57,16 @@ body {
     /* Opera私有属性 */
     user-select: none;
     /* CSS3属性 */
+}
+
+
+/* 禁止图片拖拽行为 */
+
+img {
+    -webkit-user-select: none;
+    cursor: default;
+    pointer-events: none;
+    /*但是禁止穿透会不会存在问题*/
 }
 
 body {
