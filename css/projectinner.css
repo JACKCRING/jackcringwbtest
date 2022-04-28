@@ -101,7 +101,7 @@ h1,
 .h1 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.2;
 }
 
@@ -217,7 +217,8 @@ blockquote {
 
 b,
 strong {
-    font-weight: bolder;
+    font-weight: 600;
+    /* font-weight: bolder; */
 }
 
 small,
