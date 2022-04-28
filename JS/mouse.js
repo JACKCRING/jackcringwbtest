@@ -1,4 +1,4 @@
-// Some help functions.一些帮助功能。
+//一些帮助功能。
 {
     const lerp = (a, b, n) => (1 - n) * a + n * b;
     const getMousePos = (e) => {
