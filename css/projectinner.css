@@ -378,14 +378,15 @@ caption {
     text-align: right;
 }
 
-footer,
+
+/* footer,
 .a {
-    margin-left: 20rem;
+    margin-left: 10rem;
 }
 
 .indent {
     align-content: center;
-}
+} */
 
 
 /* 网格样式 */
