@@ -3,16 +3,16 @@
     "short_name": "JACKCRING LAB",
     "start_url": ".",
     "display": "fullscreen",
-    "background_color": "#fff",
+    "background_color": "#dfe0e4",
     "description": "A simply readable Hacker News app.",
     "icons": [{
         "src": "./images/logo.svg",
         "sizes": "48x48",
         "type": "image/svg"
     }, {
-        "src": "images/touch/homescreen72.png",
+        "src": "./images/logo.svg",
         "sizes": "72x72",
-        "type": "image/png"
+        "type": "image/svg"
     }, {
         "src": "images/touch/homescreen96.png",
         "sizes": "96x96",
