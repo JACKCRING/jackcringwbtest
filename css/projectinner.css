@@ -21,7 +21,7 @@
 :root {
     --fg-50: rgba(var(--fg), var(--fg), var(--fg), 0.5);
     --fg-100: rgba(var(--fg), var(--fg), var(--fg), 1);
-    --bg: rgba(223, 224, 228, 1);
+    --bg: #dfe0e4;
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
