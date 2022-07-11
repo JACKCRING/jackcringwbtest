@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>蒙版与禁止滚动</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 2000px;
+            background-color: blue;
+        }
+        
+        .modal {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.7);
+            background-size: 100%;
+        }
+        
+        .p {
+            font-size: 50px;
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>内容</p>
+    </div>
+    <!-- 蒙版 -->
+    <div class="modal">
+        <p class="p">按钮</p>
+    </div>
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+<script>
+    $(function() {
+        // 阻止蒙版后页面滑动
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            //移动端
+            $(".modal").on('touchmove', function(e) {
+                e.stopPropagation();
+                e.preventDefault();
+                $('.p').click(function() {
+                    $(this).parent().hide();
+                })
+            })
+        } else {
+            //PC端
+            var flag = true;
+            $('.p').click(function() {
+                $(this).parent().hide();
+                $('body').css({
+                    "overflow": 'visible'
+                });
+                flag = false;
+            })
+            if (flag)
+                $('body').css({
+                    "overflow": 'hidden'
+                });
+        }
+    })
+</script>
+
+</html>
